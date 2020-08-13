@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :teachers
   root 'sessions#home'
-  get '/signup' => 'user#new'
+  get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :teachers do
     resources :students, only: [:new, :create, :index]
     resources :appointments, only: [:new, :create, :index]
-  end 
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
