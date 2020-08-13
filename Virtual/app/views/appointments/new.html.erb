@@ -1,0 +1,16 @@
+<h1>Make an appointment for <%= @appointment.teacher.name %></h1>
+
+<%= form_for [@teacher, @appointment] do |f|%>
+  <%= f.hidden_field :teacher_id%>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_area :name%>
+  </div>
+
+  <div>
+    <%= f.label :date, "Type Date"%>
+    <%= f.datetime :date%>
+  </div>
+  <br>
+  <%= f.submit %>
+<% end %>
