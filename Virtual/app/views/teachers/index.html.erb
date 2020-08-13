@@ -1,0 +1,19 @@
+<h1>All Teachers</h1>
+
+<ul>
+  <% @teachers.each do |vet|%>
+    <li>
+      <%= link_to teacher.name, teacher_path(teacher) %> -
+      <%= teacher.grade %> -
+
+        <ul>
+          <% teacher.ordered_students.each do |p|%>
+          <li><strong><%= p.name %></strong> |
+            <%= p.grade%> grade |
+            Parent: <%= p.user.username%>
+          </li>
+          <% end %>
+        </ul>
+    </li>
+  <% end %>
+</ul>
