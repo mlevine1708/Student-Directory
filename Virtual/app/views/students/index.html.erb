@@ -1,0 +1,7 @@
+<h1>All the Students!</h1>
+
+<%= form_tag("/students", method: "get") do %>
+  <%= label_tag(:grade, "All students above grade:") %>
+  <%= number_field_tag(:grade) %>
+  <%= submit_tag("Search") %>
+<% end %>
