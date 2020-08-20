@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
           @students = Student.search_by_grade(params[:grade]).order_by_grade.includes(:teacher,:user)
           @students = Student.order_by_grade if @students == []
         else
-          @students = Student.includes(:teacher,:user).order_by_grade
+          @students = Student.includes(:teacher,:user)
         end
     end
   end

@@ -11,5 +11,19 @@
 
   <body>
     <%= yield %>
+  </body
+
+  <% if logged_in? %>
+    <nav class="navbar">
+      <%= link_to 'Log Out', logout_path, method: :delete, class: 'navlink' %>
+      <%= link_to 'All Students', students_path, class: 'navlink'%>
+      <%= link_to 'New Student', new_student_path, class: 'navlink' %>
+      <%= link_to 'All Teachers', teachers_path, class: 'navlink' %>
+    </nav>
+    <% end %>
+
+    <div class="container">
+    <%= yield %>
+    </div>
   </body>
 </html>
