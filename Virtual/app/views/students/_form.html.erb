@@ -1,6 +1,7 @@
 <%= form_for(@student) do |f| %>
 
-  <%= render partial: 'layouts/errors', locals: {object: @student} %>
+  <%= render partial: 'errors', locals: {object: @student} %>
+
 
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -28,7 +29,7 @@
         <%= v.label :grade %>
         <%= v.number_field :grade %>
 
-      
+
     <% end %>
   <% end %>
 
