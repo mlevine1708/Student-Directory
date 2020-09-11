@@ -10,6 +10,13 @@ class Student < ApplicationRecord
   def teacher_attributes=(attributes)
     teacher = Teacher.find_or_create_by(attributes)
     self.teacher = teacher
-  end  
+  end
+
+  def self.search_by_grade(grade)
+    Student.where("grade > ?", grade)
+  end
+
+  def self.order_by_grade
+  end
 
 end

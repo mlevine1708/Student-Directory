@@ -27,8 +27,9 @@ class StudentsController < ApplicationController
       @students = teacher.students
     else
        if params[:grade]
-          @students = Student.search_by_grade(params[:grade]).order_by_grade.includes(:teacher,:user)
-          @students = Student.order_by_grade if @students == []
+          @students = Student.search_by_grade(params[:grade])
+          #redirect or render 
+        #  @students = Student.order_by_grade if @students == []
         else
           @students = Student.includes(:teacher,:user)
         end
