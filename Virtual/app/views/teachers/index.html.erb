@@ -1,13 +1,13 @@
 <h1>All Teachers</h1>
 
 <ul>
-  <% @teachers.each do |vet|%>
+  <% @teachers.each do |teacher|%>
     <li>
-      <%= link_to teacher.name, teacher_path(teacher) %> -
+      <%= link_to @teachers.name, teacher_path(teacher) %> -
       <%= teacher.grade %> -
 
         <ul>
-          <% teacher.ordered_students.each do |p|%>
+          <% @teachers.ordered_students.each do |p|%>
           <li><strong><%= p.name %></strong> |
             <%= p.grade%> grade |
             Parent: <%= p.user.username%>
