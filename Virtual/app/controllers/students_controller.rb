@@ -1,5 +1,4 @@
 class StudentsController < ApplicationController
-  before_action :check_for_logged_in, except: [:index]
 
   def new
     if params[:teacher_id] && teacher = Teacher.find_by_id(params[:teacher_id])
@@ -28,7 +27,7 @@ class StudentsController < ApplicationController
     else
        if params[:grade]
           @students = Student.search_by_grade(params[:grade])
-          #redirect or render 
+          #redirect or render
         #  @students = Student.order_by_grade if @students == []
         else
           @students = Student.includes(:teacher,:user)

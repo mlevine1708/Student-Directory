@@ -5,3 +5,15 @@
   <%= number_field_tag(:grade) %>
   <%= submit_tag("Search") %>
 <% end %>
+
+<ul>
+
+        <ul>
+          <% @students.each do |student|%>
+          <li><strong><%= student.name %></strong> |
+            <%= student.grade%> grade |
+            Parent: <%= student.user.username%>
+          </li>
+          <% end %>
+        </ul>
+</ul>

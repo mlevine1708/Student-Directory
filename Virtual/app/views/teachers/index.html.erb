@@ -3,14 +3,14 @@
 <ul>
   <% @teachers.each do |teacher|%>
     <li>
-      <%= link_to @teachers.name, teacher_path(teacher) %> -
-      <%= teacher.grade %> -
+      <%= link_to teacher.name, teacher_path(teacher) %> 
+      <%= teacher.grade %>
 
         <ul>
-          <% @teachers.ordered_students.each do |p|%>
-          <li><strong><%= p.name %></strong> |
-            <%= p.grade%> grade |
-            Parent: <%= p.user.username%>
+          <% teacher.ordered_students.each do |student|%>
+          <li><strong><%= student.name %></strong> |
+            <%= student.grade%> grade |
+            Parent: <%= student.user.username%>
           </li>
           <% end %>
         </ul>

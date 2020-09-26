@@ -7,16 +7,12 @@ class Student < ApplicationRecord
   validates_associated :teacher
   accepts_nested_attributes_for :teacher
 
+  scope :order_by_grade, -> { order(:grade) }
+  scope :search_by_grade, -> (grade) { where("grade > ?", grade) }
+
   def teacher_attributes=(attributes)
     teacher = Teacher.find_or_create_by(attributes)
     self.teacher = teacher
-  end
-
-  def self.search_by_grade(grade)
-    Student.where("grade > ?", grade)
-  end
-
-  def self.order_by_grade
   end
 
 end
