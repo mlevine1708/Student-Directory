@@ -5,6 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <style>
+        body { background-color: Gray; }
+        p { color: #fff; }
+    </style>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,11 +19,11 @@
 
   <% if logged_in? %>
     <nav class="navbar">
-      <%= link_to 'Log Out', logout_path, method: :delete, class: 'navlink' %>
-      <%= link_to 'All Students', students_path, class: 'navlink'%>
-      <%= link_to 'New Student', new_student_path, class: 'navlink' %>
-      <%= link_to 'All Teachers', teachers_path, class: 'navlink' %>
-      <%= link_to 'Make An Appointment', appointments_path, class: 'navlink' %>
+      <h3><%= link_to 'Log Out', logout_path, method: :delete, class: 'navlink' %> </h3>
+      <h3><%= link_to 'All Students', students_path, class: 'navlink'%></h3>
+      <h3><%= link_to 'New Student', new_student_path, class: 'navlink' %></h3>
+      <h3><%= link_to 'All Teachers', teachers_path, class: 'navlink' %></h3>
+      <h3><%= link_to 'Make An Appointment', appointments_path, class: 'navlink' %></h3>
     </nav>
     <% end %>
 
