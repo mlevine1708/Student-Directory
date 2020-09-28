@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+  get '/appointments' => 'appointments#new'
 
   get '/auth/facebook/callback' =>  'sessions#fbcreate'
 
@@ -13,10 +14,12 @@ Rails.application.routes.draw do
 
   resources :students
 
+  resources :appointments
+
   resources :teachers do
     resources :students, only: [:new, :create, :index]
     resources :appointments, only: [:new, :create, :index]
   end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end
