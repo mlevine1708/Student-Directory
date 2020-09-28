@@ -2,7 +2,6 @@ class Appointment < ApplicationRecord
 
   belongs_to :user
 
-  def appointments
-  end 
+  scope :by_teacher, ->(teacher_name) { where(teacher: teacher_name) }
 
 end

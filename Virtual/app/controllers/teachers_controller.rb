@@ -6,5 +6,6 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find_by(id: params[:id])
+    @appointments = Appointment.by_teacher(@teacher.name) if @teacher
   end
 end

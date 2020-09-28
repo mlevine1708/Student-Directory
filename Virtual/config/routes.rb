@@ -6,15 +6,12 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  get '/appointments' => 'appointments#new'
 
   get '/auth/facebook/callback' =>  'sessions#fbcreate'
 
   resources :users
 
   resources :students
-
-  resources :appointments
 
   resources :teachers do
     resources :students, only: [:new, :create, :index]
