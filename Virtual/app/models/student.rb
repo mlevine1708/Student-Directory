@@ -2,6 +2,7 @@ class Student < ApplicationRecord
 
   belongs_to :user
   belongs_to :teacher
+  has_many :appointments 
 
   validates :teacher_id, presence: true
   validates_associated :teacher

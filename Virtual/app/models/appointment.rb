@@ -1,7 +1,7 @@
 class Appointment < ApplicationRecord
 
   belongs_to :user
-
-  scope :by_teacher, ->(teacher_name) { where(teacher: teacher_name) }
+  belongs_to :teacher
+  belongs_to :student 
 
 end
