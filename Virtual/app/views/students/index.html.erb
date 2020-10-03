@@ -11,8 +11,9 @@
         <ul>
           <% @students.each do |student|%>
           <li><strong><%= student.name %></strong> |
-            <%= student.grade%> grade |
-            Parent: <%= student.user.username%>
+            Grade <%= student.grade%> |
+            Parent: <%= student.user.username%> |
+            Phone Number: <%= student.phone_number%> |
           </li>
           <% end %>
         </ul>

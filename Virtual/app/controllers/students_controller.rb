@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
       @student = teacher.students.build
     else
       @student = Student.new
-      @student.build_teacher  #belongs_to
+      @student.build_teacher
     end
   end
 
@@ -22,13 +22,10 @@ class StudentsController < ApplicationController
 
   def index
     if params[:teacher_id] && teacher = Teacher.find_by_id(params[:teacher_id])
-      #nested route
       @students = teacher.students
     else
        if params[:grade]
           @students = Student.search_by_grade(params[:grade])
-          #redirect or render
-        #  @students = Student.order_by_grade if @students == []
         else
           @students = Student.includes(:teacher,:user)
         end
@@ -68,6 +65,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:grade, :name, :parent, :teacher_id, teacher_attributes: [:name, :grade])
+    params.require(:student).permit(:grade, :phone_number, :name, :parent, :teacher_id, teacher_attributes: [:name, :grade])
   end
 end
