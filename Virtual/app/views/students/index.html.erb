@@ -1,4 +1,4 @@
-<h1>All the Students!</h1>
+<h1>Student Directory</h1>
 
 <%= form_tag("/students", method: "get") do %>
   <%= label_tag(:grade, "All students above grade:") %>
@@ -13,7 +13,8 @@
           <li><strong><%= student.name %></strong> |
             Grade <%= student.grade%> |
             Parent: <%= student.user.username%> |
-            Phone Number: <%= student.phone_number%> |
+            Email Address: <%= student.email%> |
+            Phone Number: <%= student.phone_number%>
           </li>
           <% end %>
         </ul>

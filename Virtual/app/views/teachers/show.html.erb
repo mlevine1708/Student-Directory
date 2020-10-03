@@ -1,12 +1,6 @@
 <h1><%= @teacher.name %></h1>
 
-<h2><%= @teacher.grade %></h2>
 <h3>Grade: <%= @teacher.grade %></h3>
-<% if @teacher.appointments.exists? %>
 
-<h5>Number of Appointments: <%= @teacher.appointments.count%></h5>
-<% end %>
-<p>
-  <%=link_to "See All Appointments", teacher_appointments_path(@teacher.id) %> -
-  <%=link_to "Make a New Appointment", new_teacher_appointment_path(@teacher.id) %>
-</p>
+
+<h5>Number of Students: <%= @teacher.students.count%></h5>

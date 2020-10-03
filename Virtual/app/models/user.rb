@@ -1,8 +1,7 @@
 class User < ApplicationRecord
 
   has_many :students
-  has_many :appointments
-
+  
   validates :username, :email, presence: true
   validates :username, :email, uniqueness: true
   validates_uniqueness_of :uid, conditions: -> { where.not(uid: nil) }
