@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :students
+  has_many :teachers, through: :students
   
   validates :username, :email, presence: true
   validates :username, :email, uniqueness: true
