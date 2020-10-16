@@ -26,17 +26,10 @@
   <br><br>
 
   <% if !params[:teacher_id] %>
-    <h4>Or add a new teacher:</h4>
-
-    <%= f.fields_for :teacher do |v|%>
-        <%= v.label :name %>
-        <%= v.text_field :name %>
-
-        <%= v.label :grade %>
-        <%= v.number_field :grade %>
 
 
-    <% end %>
+
+  
   <% end %>
 
   <br><br>
