@@ -9,7 +9,7 @@ class Teacher < ApplicationRecord
   end
 
   def self.search(p)
-    Teacher.where("name LIKE ?", "%" + p + "%")
+    Teacher.where("name LIKE ?", "%" + "p" + "%")
   end
-
+  
 end

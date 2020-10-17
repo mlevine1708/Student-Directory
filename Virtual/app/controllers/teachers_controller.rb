@@ -1,8 +1,13 @@
 class TeachersController < ApplicationController
 
   def index
-    @teachers = Teacher.all
-    @teachers = Teacher.search(params[:search])
+    if params[:search]
+      @teachers = Teacher.where('name LIKE ?', "%#{params[:search]}%")
+    else
+      @teachers = Teacher.all
+    end 
+    #@teachers = Teacher.all
+    #@teachers = Teacher.search(params[:search])
   end
 
   def show
